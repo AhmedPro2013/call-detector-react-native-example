@@ -20,7 +20,6 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.requestPermission();
-    this.startListenerTapped();
   }
 
   async requestPermission() {
@@ -51,6 +50,7 @@ export default class App extends Component {
         logGranted === PermissionsAndroid.RESULTS.GRANTED
       ) {
         console.log('Permissions granted');
+        this.startListenerTapped();
         return true;
       } else {
         console.log('Permissions denied');
